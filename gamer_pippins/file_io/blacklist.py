@@ -21,7 +21,7 @@ load_blacklist()
 def save_blacklist():
     success = False
     try:
-        with open("gamer_pippins./config/blacklist.json", 'w', encoding="utf8") as f:
+        with open("gamer_pippins/config/blacklist.json", 'w', encoding="utf8") as f:
             for blacklist in ConfigManager.blacklist.values():
                 blacklist.sort(key=lambda x: dateToInt(x["date"]), reverse=True)
             json.dump(ConfigManager.blacklist, f, indent=4)
